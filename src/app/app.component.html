@@ -1,0 +1,14 @@
+<div style="width: 45%;">
+  <kendo-combobox 
+    style="width: 100%;" 
+    id="jobTicketPick" 
+    [data]="jobTicketsMod"
+    [ngStyle]="{'box-shadow': !jobTktValidTF ? gentleCorrection : 'none'}" 
+    [textField]="'ticketNo'" 
+    [valueField]="'id'"
+    [(ngModel)]="jobTicketSelect" 
+    [filterable]="true" 
+    (filterChange)="filterJobTicket($event)"
+    (valueChange)="handleJobTicket($event, false)">
+  </kendo-combobox>
+</div>
