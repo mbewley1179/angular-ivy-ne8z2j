@@ -25,9 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Install npm
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
+      # ... install modules before activating the license
+      - name: Install NPM modules
+        run: |
+          npm install -g @angular/cli
+          npm install
 
       # ... install modules before activating the license
       - name: Activate Kendo UI License
