@@ -37,7 +37,8 @@ jobs:
         env:
           KENDO_UI_LICENSE: ${{ secrets.KENDO_UI_LICENSE }}
 
-      # Runs a set of commands using the runners shell
-      - run: bats -v
+      # ... run application build after license activation
+      - name: Build Application
+        run: npm run build --prod
           
       
